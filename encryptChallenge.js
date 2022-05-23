@@ -7,12 +7,11 @@ class Cryptography {
     let encrypted = '';
 
     const vinCharacters = vin.split('');
-    const keyCharacters = key.split('');
 
     vinCharacters.forEach((char, index) => {
       const vinCharCode = char.charCodeAt();
 
-      const analogueChar = keyCharacters[index % keyCharacters.length];
+      const analogueChar = key[index % key.length];
 
       const result = vinCharCode + analogueChar.charCodeAt();
 
@@ -26,12 +25,11 @@ class Cryptography {
     let decrypted = '';
 
     const vinCharacters = cypher.split('');
-    const keyCharacters = key.split('');
 
     vinCharacters.forEach((char, index) => {
       const vinCharCode = char.charCodeAt();
 
-      const analogueChar = keyCharacters[index % keyCharacters.length];
+      const analogueChar = key[index % key.length];
 
       const result = vinCharCode - analogueChar.charCodeAt();
 
